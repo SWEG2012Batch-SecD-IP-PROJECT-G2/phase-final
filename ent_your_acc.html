@@ -1,0 +1,324 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>FarMart/about</title>
+    <meta name="author" content="group-2">
+    <meta name="description" content="a food and other agricultural products e-commerce platform" >
+    <meta name="keywords" content="food,website,e-commerce,website,FarMart">
+
+<link href="https://fonts.googleapis.com/css2?family=Lato:wght@300;400&family=Poppins:wght@200;300;400;500;600;700;800&display=swap" rel="stylesheet">
+
+
+ <!----------------font awesome---------------------------------------------------------->
+
+<link rel="stylesheet"  href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+<script src="https://kit.fontawesome.com/c487c6ca9b.js" crossorigin="anonymous"></script>
+
+ 
+
+<link rel="stylesheet" type="text/css" href="css/style2.css">
+<link rel="stylesheet" type="text/css" href="css/ent-your-acc.css" >
+
+
+ 
+
+
+  </head>
+
+
+  <body>
+
+
+
+ <!-------------------------------------------------------->
+ <!--              header                                -->
+ <!-------------------------------------------------------->
+
+  <header>
+
+    <div class="header-1">
+
+        <a href="#" class="logo"><i class="fas fa-shopping-basket"></i>FarMart</a>
+
+        <form action="" class="search-box-container">
+            <input type="search" id="search-box" placeholder="search here...">
+            <label for="search-box" class="fas fa-search"></label>
+        </form>
+
+    </div>
+
+    <div class="header-2">
+
+        <div id="menu-bar" class="fas fa-bars"></div>
+
+        <nav class="navbar">
+            <a href="home.html">home</a>
+            <a href="newsfeed.html">newsfeed</a>
+            <a href="shop-all-1.html">shop</a>
+            <a href="about.html">about</a>
+            <a href="log.html" >work with us</a>
+        </nav>
+
+        <div class="icons">
+            <a href="cart.html" class="fas fa-shopping-cart"></a>
+            <a href="#" class="fas fa-heart"></a>
+            <a href="#" class="fas fa-user-circle"></a>
+        </div>
+
+    </div>
+
+</header>
+
+<!-------------------------------------------------------->
+ <!--              main                                 -->
+ <!-------------------------------------------------------->
+
+
+<!-- header section ends -->
+
+<div class="container">
+   
+    <form id="Form1">
+        <h3>Create Account</h3>
+        <input type="text" placeholder="First Name" required>
+        <input type="text" placeholder="Last Name" required>
+       <div class="inputBox">
+           <span id="mob">
+    <input type="text" id="phone" placeholder="Phone number" onkeydown="phoneValidation()" required>
+        <span id="text1"></span>
+    </span>
+             <span id="vall">
+                    <input id="email" type="text" onkeydown="validation()" placeholder="email address" required>
+                    <span id="text"></span>
+                </span> 
+            </div>
+<div class="btn-box">
+    <button type="button" id="Next1">Next</button>
+</div>
+
+    </form>
+ <form id="Form2">
+        <h3>Address</h3>
+        <input type="number" placeholder="account number" >
+        <input type="text" placeholder="region" >
+        <input type="text" placeholder="town" >
+<div class="btn-box">
+    <button type="button" id="Back1">Back</button>
+    <button type="button" id="Next2">Next</button>
+</div>
+    </form>
+    <form id="Form3">
+        <h3>Username</h3>
+        <input type="username" placeholder="username" required>
+        <div class="con">
+            <input type="password" id="password" placeholder="password" required>
+                    <p id="message">password is <span id="strength"></span></p> 
+                </div>  
+                <span id="conspan">
+        <input type="password" id="confirm" placeholder="confirm password"  required>
+        <span id="text2"></span>
+    </span>
+<div class="btn-box">
+    <button type="button" id="Back2">Back</button>
+    <button type="submit"  onclick="myFunction()">Submit</button>
+</div>
+    </form>
+
+    <div class="step-row">
+        <div id="progress"></div>
+        <div class="step-col"><small>step 1</small></div>
+        <div class="step-col"><small>step 2</small></div>
+        <div class="step-col"><small>step 3</small></div>
+
+    </div>
+
+</div>
+<script >
+    
+var Form1 = document.getElementById("Form1");
+var Form2 = document.getElementById("Form2");
+var Form3 = document.getElementById("Form3");
+
+var Next1 = document.getElementById("Next1");
+var Next2 = document.getElementById("Next2");
+var Back1 = document.getElementById("Back1");
+var Back2 = document.getElementById("Back2");
+
+var progress = document.getElementById("progress");
+
+Next1.onclick = function(){
+Form1.style.left = "-450px";
+Form2.style.left = "40px";
+progress.style.width = "240px";
+}
+
+Back1.onclick = function(){
+Form1.style.left = "40px";
+Form2.style.left = "450px";
+progress.style.width = "120px";
+
+}
+Next2.onclick = function(){
+Form2.style.left = "-450px";
+Form3.style.left = "40px";
+progress.style.width = "360px";
+}
+
+Back2.onclick = function(){
+Form2.style.left = "40px";
+Form3.style.left = "450px";
+progress.style.width = "240px";
+}
+var pass = document.getElementById("password");
+var msg = document.getElementById("message");
+var str = document.getElementById("strength");
+        
+        pass.addEventListener('input', () => {
+            if(pass.value.length > 0){
+                msg.style.display = "block";
+            }
+            else{
+                msg.style.display = "none";
+            }
+            if(pass.value.length < 4){
+                str.innerHTML = "weak";
+                pass.style.borderColor ="red";
+                msg.style.color = "#ff5925";
+            }
+           else if(pass.value.length >= 4 && pass.value.length < 8){
+                str.innerHTML = "medium";
+                pass.style.borderColor ="yellow";
+                msg.style.color = "yellow";
+            }
+           else if(pass.value.length >= 8){
+                str.innerHTML = "strong";
+                pass.style.borderColor ="green";
+                msg.style.color = "green";
+            }
+        } )
+           
+
+function myFunction(){
+   if(pass.value.myFunction){       
+         alert("you have registered successfully");
+}
+}
+
+
+function validation(){
+var val = document.getElementById("vall");
+var email = document.getElementById("email").value;
+var text = document.getElementById("text");
+var pattern = (/^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/);   ///^[^]+@[^]+\.[a-z]{2,3}$/
+
+if(email.match(pattern)){
+val.classList.add("valid");
+val.classList.remove("invalid");
+text.innerHTML="email is valid";
+text.style.color="green";
+}
+else{
+val.classList.remove("valid");
+val.classList.add("invalid");
+text.innerHTML="please enter valid email";
+text.style.color="red";
+}
+}
+function phoneValidation(){
+var mob = document.getElementById("mob");
+var phone = document.getElementById("phone").value;
+var text = document.getElementById("text1");
+var pattern =(/^(\+[0-9]{3})?[ -.]?([0-9]{3})[ -.]?([0-9]{3})[-. ]?([0-9]{3})$/);
+
+
+if(phone.match(pattern)){
+// mob.classList.add("valid");
+// mob.classList.remove("invalid");
+text.textContent = "valid phone number";
+text.style.color = "green";
+}
+else{
+// mob.classList.remove("valid");
+// mob.classList.add("invalid");
+text.innerHTML="please enter valid phone";
+text.style.color="red";
+
+}
+}
+
+var pass1 = document.getElementById("password");
+var confirm = document.getElementById("confirm");
+var text2 = document.getElementById("text2");
+confirm.addEventListener("input",()=>{
+    if(confirm.value == pass1.value){
+        text2.innerHTML="password matched";
+        text2.style.color="green";
+    }else{
+            text2.innerHTML="password doesn't match";
+            text2.style.color="red";
+    }
+
+})
+
+</script>
+
+
+
+ <!-------------------------------------------------------->
+ <!--              footer                                -->
+ <!-------------------------------------------------------->
+
+ <section class="footer">
+
+    <div class="box-container">
+
+        <div class="box">
+            <h3>quick links</h3>
+            <a href="home.html"> <i class="fas fa-chevron-right"></i> home </a>
+            <a href="newsfeed.html"> <i class="fas fa-chevron-right"></i> newsfeed </a>
+            <a href="shop-all-1.html"> <i class="fas fa-chevron-right"></i> shop </a>
+            <a href="about.html"> <i class="fas fa-chevron-right"></i> about </a>
+            <a href="#contact"> <i class="fas fa-chevron-right"></i> work with us </a>
+          
+        </div>
+
+        <div class="box">
+            <h3>our locations</h3>
+            <a href="#"> <i class="fas fa-chevron-right"></i> Addis Ababa </a>
+            <a href="#"> <i class="fas fa-chevron-right"></i> hawasssa </a>
+            <a href="#"> <i class="fas fa-chevron-right"></i> Adama </a>
+            <a href="#"> <i class="fas fa-chevron-right"></i> Bahir Dar </a>
+            <a href="#"> <i class="fas fa-chevron-right"></i> Gonder </a>
+        </div>
+
+        <div class="box">
+            <h3>contact info</h3>
+            <a href="#"> <i class="fas fa-phone"></i> +2519455445 </a>
+            <a href="#"> <i class="fas fa-phone"></i> +2519557787 </a>
+            <a href="#"> <i class="fas fa-envelope"></i> farmart@gmail.com </a>
+            <a href="#"> <i class="fas fa-map-marker-alt"></i> Addis Ababa, Ethiopia - 1000 </a>
+        </div>
+
+        <div class="box">
+            <h3>follow us</h3>
+            <a href="#"> <i class="fab fa-facebook-f"></i> facebook </a>
+            <a href="#"> <i class="fab fa-twitter"></i> twitter </a>
+            <a href="#"> <i class="fab fa-twitter"></i> twitter </a>
+            <a href="#"> <i class="fab fa-instagram"></i> instagram </a>
+            <a href="#"> <i class="fab fa-linkedin"></i> linkedin </a>
+            <a href="#"> <i class="fab fa-pinterest"></i> pinterest </a>
+        </div>
+
+    </div>
+
+    <div class="credit"> created by <span>FartMart</span> | all rights reserved </div>
+
+</section>
+
+<!-- footer section ends -->
+<script src="js/main.js"></script>
+</body>
+</html>
